@@ -13,18 +13,18 @@ class card {
 
 public:
 
-   card(int value, String suit); // Implement SUIT
+   card(int value, string suit);
 
    int getValue();
    void setValue(int value);
 
-   String getSuit();
-   void setSuit(String suit);
+   string getSuit();
+   void setSuit(string suit);
 
 
 private:
 
    int value;
-   String suit;
+   string suit;
 
 };
