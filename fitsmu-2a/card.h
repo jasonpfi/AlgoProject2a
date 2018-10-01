@@ -8,23 +8,24 @@
  */
 
 #include <iostream>
+#include <string>
 
 class card {
 
 public:
 
-   card(int value, String suit); // Implement SUIT
+   card(int value, std::string suit); // Implement SUIT
 
    int getValue();
    void setValue(int value);
 
-   String getSuit();
-   void setSuit(String suit);
+   std::string getSuit();
+   void setSuit(std::string suit);
 
 
 private:
 
    int value;
-   String suit;
+   std::string suit;
 
 };
