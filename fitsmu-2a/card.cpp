@@ -7,6 +7,3 @@ std::ostream& operator << (std::ostream& os, card& c)
           std::to_string(c.getValue()) << std::endl;
 }
 
-card::card(int value, std::string suit)
-// Constructor for the card class. Sets the value and suit of the card
-
