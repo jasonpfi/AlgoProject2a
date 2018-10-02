@@ -15,6 +15,15 @@ deck::deck()
 	}
 }
 
+deck::~deck()
+// Deallocates memory by deleting each card in deck
+{
+	while (this->first != NULL)
+	{
+		delete pop();
+	}
+}
+
 void deck::shuffle()
 {
 	int length = 0;

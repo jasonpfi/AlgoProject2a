@@ -16,9 +16,10 @@ class deck
 {
 public:
 
-	// Constructors
+	// Constructors & Destructors
 	deck();
 	deck(node<card> *head) : first(head) {};
+	~deck();
 
 	void shuffle();
 	card deal();
