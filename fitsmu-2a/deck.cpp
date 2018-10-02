@@ -79,7 +79,7 @@ node<card>* deck::insertAt(node<card>* list, const int & index, node<card>* newC
 		}
 		else
 		{
-			throw new std::exception("Index out of bounds exception");
+			//throw new std::exception("Index out of bounds exception");
 		}
 	}
 
