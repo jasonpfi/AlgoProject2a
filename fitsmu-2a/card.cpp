@@ -1,12 +1,9 @@
 #include "card.h"
 
-std::ostream& operator << (std::ostream& os, card& c)
+std::ostream& operator << (std::ostream& out, const card& card)
 // Overloaded output operator
 {
-   return os << "Suit: " << c.getSuit() << "\nValue: " <<
-          std::to_string(c.getValue()) << std::endl;
+   return out << "Suit: " << card.suit << "\nValue: " <<
+          std::to_string(card.value) << std::endl;
 }
-
-card::card(int value, std::string suit)
-// Constructor for the card class. Sets the value and suit of the card
 
