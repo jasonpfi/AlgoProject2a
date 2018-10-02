@@ -7,17 +7,19 @@
  *
  */
 
-
 #include <iostream>
+#include "d_node.h"
+#include "card.h"
 
 class deck
 {
+
 public:
 
    deck();
 
 private:
 
-   card* first;
+   node<card>* first;
 
-}
+};

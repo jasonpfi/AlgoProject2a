@@ -7,8 +7,16 @@
  *
  */
 
+#include "card.h"
 
-card::card(int value, string suit)
+std::ostream operator << (std::ostream& os, card& c)
+// Overloaded output operator
+{
+   return os << "Suit: " << c.getSuit() << "\nValue: " <<
+          std::to_string(c.getValue());
+}
+
+card::card(int value, std::string suit)
 // Constructor for the card class. Sets the value and suit of the card
 {
    this->suit = suit;
@@ -27,13 +35,13 @@ void card::setValue(int value)
    this->value = value;
 }
 
-String getSuit()
+std::string card::getSuit()
 // Returns the suit of the card
 {
    return this->suit;
 }
 
-void setSuit(string suit)
+void card::setSuit(std::string suit)
 // Sets the suit of the card to the passed string
 {
    this->suit = suit;
