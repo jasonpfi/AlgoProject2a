@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/fitsmu-2a/Debug/fitsmu-2a.tlog
+/fitsmu-2a/Debug
+/fitsmu-2a/.vs/fitsmu-2a/v15/Browse.VC.opendb

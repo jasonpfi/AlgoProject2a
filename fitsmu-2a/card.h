@@ -9,28 +9,35 @@
 
 #include <iostream>
 
-// Card class declaration
-class card {
+class card
+{
 
 public:
 
-   // Constructor
-   card(int value, std::string suit);
+	// Constructors
+	card(const int& value, const char& suit)
+		: value(value), suit(suit)
+	{};
 
-   // value getter and setter
-   int getValue();
-   void setValue(int value);
+	// Getters and Setters
+	int getValue() const { return value; };
+	void setValue(const int& value) { this->value = value; };
 
-   // suit getter and setter
-   std::string getSuit();
-   void setSuit(std::string suit);
+	char getSuit() const { return value; } ;
+	void setSuit(const char& suit) { this->suit = suit; }
+
+	// Overloaded operators
+	friend std::ostream& operator <<(std::ostream& out, const card& card);
 
 
 private:
 
-   // Private data members
-   int value;
-   std::string suit;
-   card* next;
+	// Rank of the card
+	// 1(Ace) through 13(King)
+	int value;
+
+	// Suit of the card
+	// C(lub), D(iamond), H(eart), S(pade)
+	char suit;
 
 };
