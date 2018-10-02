@@ -60,6 +60,7 @@ node<card>* deck::insertAt(node<card>* list, const int & index, node<card>* newC
 {
 	node<card> *curr = list;
 	node<card> *prev = NULL;
+
 	for (int i = 0; i < index; i++)
 	{
 		if (curr != NULL)
