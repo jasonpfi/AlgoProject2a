@@ -8,24 +8,36 @@
  */
 
 #include <iostream>
-#include <string>
 
-class card {
+class card
+{
 
 public:
 
-   card(int value, std::string suit); // Implement SUIT
+	// Constructors
+	card(const int& value, const char& suit)
+		: value(value), suit(suit)
+	{};
 
-   int getValue();
-   void setValue(int value);
+	// Getters and Setters
+	int getValue() const { return value; };
+	void setValue(const int& value) { this->value = value; };
 
-   std::string getSuit();
-   void setSuit(std::string suit);
+	char getSuit() const { return value; } ;
+	void setSuit(const char& suit) { this->suit = suit; }
+
+	// Overloaded operators
+	friend std::ostream& operator <<(std::ostream& out, const card& card);
 
 
 private:
 
-   int value;
-   std::string suit;
+	// Rank of the card
+	// 1(Ace) through 13(King)
+	int value;
+
+	// Suit of the card
+	// C(lub), D(iamond), H(eart), S(pade)
+	char suit;
 
 };
