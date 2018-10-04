@@ -15,16 +15,15 @@ class card
 public:
 
 	// Constructors
-	card(const int& value, const char& suit)
-		: value(value), suit(suit)
-	{};
+	card(const int value, const std::string suit)
+		: value(value), suit(suit) {}
 
 	// Getters and Setters
-	int getValue() const { return value; };
-	void setValue(const int& value) { this->value = value; };
+	int getValue() const { return value; }
+	void setValue(const int& value) { this->value = value; }
 
-	char getSuit() const { return value; } ;
-	void setSuit(const char& suit) { this->suit = suit; }
+   std::string getSuit() const { return suit; }
+	void setSuit(const std::string& suit) { this->suit = suit; }
 
 	// Overloaded operators
 	friend std::ostream& operator <<(std::ostream& out, const card& card);
@@ -37,7 +36,7 @@ private:
 	int value;
 
 	// Suit of the card
-	// C(lub), D(iamond), H(eart), S(pade)
-	char suit;
+	// Club, Diamond, Heart, Spade
+   std::string suit;
 
 };
