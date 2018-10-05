@@ -8,6 +8,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 class card
 {
@@ -15,14 +16,15 @@ class card
 public:
 
 	// Constructors
-	card(const int value, const std::string suit)
-		: value(value), suit(suit) {}
+	card(const int& value, const std::string& suit)
+		: value(value), suit(suit)
+	{}
 
 	// Getters and Setters
 	int getValue() const { return value; }
 	void setValue(const int& value) { this->value = value; }
 
-   std::string getSuit() const { return suit; }
+	std::string getSuit() const { return suit; }
 	void setSuit(const std::string& suit) { this->suit = suit; }
 
 	// Overloaded operators
@@ -37,6 +39,6 @@ private:
 
 	// Suit of the card
 	// Club, Diamond, Heart, Spade
-   std::string suit;
+	std::string suit;
 
 };

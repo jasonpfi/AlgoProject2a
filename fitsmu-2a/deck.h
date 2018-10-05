@@ -21,21 +21,20 @@ public:
 	deck(node<card> *head) : first(head) {};
 	~deck();
 
-   // Public methods
+	// Public methods
 	void shuffle();
-	card deal();
 
 	// Overloaded operators
 	friend std::ostream& operator <<(std::ostream& out, const deck& deck);
 
 private:
 
-   // Private data member
+	// Private data member
 	node<card> *first = NULL;
 
 	// Private methods
 	void addCard(const card& card);
 	node<card>* pop();
 
-	static node<card>* insertAt(node<card> *list, const int index, node<card> *newCard);
+	static node<card>* insertAt(node<card> *list, const int& index, node<card> *newCard);
 };

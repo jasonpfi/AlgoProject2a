@@ -13,21 +13,21 @@
 deck::deck()
 // Default constructor fills deck with 52 ordered cards
 {
-   // Create array of suit names to loop though and create cards
-   std::string suits[] = {"Club", "Diamond", "Heart", "Spade"};
+	// Create lookup array of suit names to loop though and create cards
+	std::string suits[] = { "Club", "Diamond", "Heart", "Spade" };
 
-   // Add cards in reverse order so the linked list
+	// Add cards in reverse order so the linked list
 	//  is ordered properly at the end
-   // Loop through the array of suits and card values to initialize
-   //  cards
+	// Loop through the array of suits and card values to initialize
+	//  cards
 
-   for (int i = 3; i >= 0; i--)
-   {
-	   for (int j = 13; j > 0; j--)
-	   {
-		   addCard(card(j, suits[i]));
-	   }
-   }
+	for (int i = 3; i >= 0; i--)
+	{
+		for (int j = 13; j > 0; j--)
+		{
+			addCard(card(j, suits[i]));
+		}
+	}
 }
 
 deck::~deck()
@@ -59,6 +59,7 @@ void deck::shuffle()
 
 node<card>* deck::pop()
 // Removes the top card from the deck and returns the pointer to it
+// Does not deallocate memory
 {
 	node<card> *top = this->first;
 	this->first = top->next;
@@ -77,7 +78,7 @@ std::ostream& operator <<(std::ostream& out, const deck& deck)
 	{
 		out << curr->nodeValue << std::endl;
 		curr = curr->next;
-   }
+	}
 	return out;
 }
 
@@ -89,10 +90,10 @@ void deck::addCard(const card& newCard)
 	this->first = new node<card>(newCard, this->first);
 }
 
-node<card>* deck::insertAt(node<card>* list, const int index,
-                           node<card>* newCard)
-// Takes the card in the argument and inserts it into the passed linked list
-//  of cards. Returns the new list.
+node<card>* deck::insertAt(node<card>* list, const int& index,
+	node<card>* newCard)
+// Takes a new card node as the argument and inserts it into the passed linked list
+//  of cards at the given index. Returns the updated head of the linked list.
 //
 //  list: The linked list of cards to be added to
 //  index: the index at which to insert the card in the linked list
@@ -101,6 +102,7 @@ node<card>* deck::insertAt(node<card>* list, const int index,
 	node<card> *curr = list;
 	node<card> *prev = NULL;
 
+	// Iterate through list to find insert position
 	for (int i = 0; i < index; i++)
 	{
 		if (curr != NULL)
@@ -110,15 +112,18 @@ node<card>* deck::insertAt(node<card>* list, const int index,
 		}
 		else
 		{
-			//throw new std::exception("Index out of bounds exception");
+			throw "Index out of bounds";
 		}
 	}
 
+	// Insert node by changing next pointer values
 	if (prev != NULL)
 	{
 		prev->next = newCard;
 	}
 	newCard->next = curr;
 
+	// Return head of list. newCard if inserted at front,
+	// the old front otherwise
 	return prev == NULL ? newCard : list;
 }
